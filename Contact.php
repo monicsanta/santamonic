@@ -8,8 +8,7 @@
 </head>
 
 <body>
-    <php include ="mail.php";
-    ?>
+    <?php include "mail.php";?>
     <style>
         * {
             margin: 0;
@@ -396,8 +395,8 @@
     <div class="contact-section">
         <h2 class="contact-title">Contact Us</h2>
         <div class="contact-form">
-            <form id="contact-Form">
-            <form id="contact-Form" action="mail.php" method="POST" onsubmit="ClearForm() ; return  true;>
+            
+            <form id="contact-Form" action="mail.php" method="POST" onsubmit="ClearForm(); return true;">
                 <label for="name">Full Name</label>
               <input type="text" id="name" name="name" placeholder="Your Name" required>
 
@@ -441,13 +440,12 @@
     </script>
 
 <script>
-        document.getElementById("contact-Form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent actual form submission
-            document.getElementById("popupOverlay").style.display = "flex";
-            setTimeout(() => {
-                document.getElementById("popup").classList.add("show");
-            }, 50);
-        });
+       document.getElementById("contact-Form").addEventListener("submit", function(event) {
+    setTimeout(() => {
+        document.getElementById("popupOverlay").style.display = "flex";
+        document.getElementById("popup").classList.add("show");
+    }, 500);
+});
 
         function closePopup() {
             document.getElementById("popup").classList.remove("show");
